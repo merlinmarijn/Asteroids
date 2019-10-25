@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionDetector : MonoBehaviour
 {
     public GameObject[] Explosion;
+    public GameObject DestroyBullet;
     private int Health = 3;
 
     // Update is called once per frame
@@ -16,9 +17,15 @@ public class CollisionDetector : MonoBehaviour
     {
         if (col.transform.tag == "Player")
         {
-            Debug.Log("Player has been hit");
-            col.transform.GetComponent<ShipMovement>().Health -= 1;
-            Destroy(gameObject);
+            if (transform.tag == "Enemy")
+            {
+                col.transform.GetComponent<ShipMovement>().Health -= 2;
+                Destroy(DestroyBullet);
+            } else
+            {
+                col.transform.GetComponent<ShipMovement>().Health -= 1;
+                Destroy(DestroyBullet);
+            }
         } else if (col.transform.tag == "Bullet")
         {
             Destroyed(0,true, col.transform.gameObject);

@@ -1296,8 +1296,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a393d25945d2274a9e64f5d82aada7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Asteroid: {fileID: 6165611075757427345, guid: 8d06324ad8c9e814b8f464de84d7cb28,
-    type: 3}
+  Asteroid:
+  - {fileID: 6165611075757427345, guid: 8d06324ad8c9e814b8f464de84d7cb28, type: 3}
+  - {fileID: 963871395810662171, guid: 1eee647304e691c4d8af4b568e98171b, type: 3}
   SpawnPoints:
   - {fileID: 438546142}
   - {fileID: 1198976839}
@@ -1429,7 +1430,7 @@ PrefabInstance:
     - target: {fileID: 5625495627327511489, guid: 3cf978517c4e2624289c64986602515d,
         type: 3}
       propertyPath: Bullet.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5625495627327511489, guid: 3cf978517c4e2624289c64986602515d,
         type: 3}
@@ -1442,6 +1443,12 @@ PrefabInstance:
       propertyPath: WeaponUI
       value: 
       objectReference: {fileID: 1144469148}
+    - target: {fileID: 5625495627327511489, guid: 3cf978517c4e2624289c64986602515d,
+        type: 3}
+      propertyPath: Bullet.Array.data[2]
+      value: 
+      objectReference: {fileID: 4158663023957483029, guid: 4e46f23a4b8fd3b42b827d50896efc44,
+        type: 3}
     - target: {fileID: 5625495627327511494, guid: 3cf978517c4e2624289c64986602515d,
         type: 3}
       propertyPath: HealthUI
