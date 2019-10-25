@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: -9125437202389532929}
   - component: {fileID: 7066023254250619054}
   - component: {fileID: 1640741044781517807}
-  - component: {fileID: 106267604861454910}
   m_Layer: 9
-  m_Name: lazer
+  m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,15 +158,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timer: 7
---- !u!114 &106267604861454910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4158663023957483029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e659edf96dbc29458b5f522e4eb1bd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

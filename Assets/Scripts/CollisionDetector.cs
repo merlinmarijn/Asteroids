@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionDetector : MonoBehaviour
 {
     public GameObject[] Explosion;
+    private int Health = 3;
 
     // Update is called once per frame
     void Update()
@@ -20,17 +21,33 @@ public class CollisionDetector : MonoBehaviour
             Destroy(gameObject);
         } else if (col.transform.tag == "Bullet")
         {
-            Debug.Log("Asteroid has been hit by bullet and has been destroyed");
-            Instantiate(Explosion[0],transform.position,Quaternion.identity);
-            Destroy(col.gameObject);
-            Destroy(gameObject.transform.parent.gameObject);
+            Destroyed(0,true, col.transform.gameObject);
         } else if (col.transform.tag == "Rocket")
         {
-            Destroy(col.gameObject);
-            Instantiate(Explosion[1], transform.position, Quaternion.identity);
+            Destroyed(1,true, col.transform.gameObject);
         } else if (col.transform.tag == "Explosion")
         {
-            Instantiate(Explosion[0], transform.position, Quaternion.identity);
+            Destroyed(0,true, col.transform.gameObject);
+        } else if (col.transform.tag == "laser")
+        {
+            Destroy(col.gameObject);
+            Health--;
+            if (Health <= 0)
+            {
+                Destroyed(0,true,col.transform.gameObject);
+            }
+        }
+    }
+
+    void Destroyed(int ExplodeMode, bool instakill, GameObject Bullet)
+    {
+        if (Bullet.transform.tag != "Explosion")
+        {
+            Destroy(Bullet);
+            Instantiate(Explosion[ExplodeMode], transform.position, Quaternion.identity);
+        }
+        if(instakill == true)
+        {
             Destroy(gameObject.transform.parent.gameObject);
         }
     }

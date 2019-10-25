@@ -12,7 +12,7 @@ public class GunManager : MonoBehaviour
     //Weapon 1: laser, Weapons 2: Rocket, etc....
     private int WeaponSlots=1;
     //Shoot Speed of weapons explained above this
-    private float[] ShootSpeed = {0.5f, 2};
+    private float[] ShootSpeed = {0.5f, 2, 0.175f};
     //Current Weapon Equiped
     private int WeaponPos = 0;
     //Object to spawn the bullets on
@@ -34,7 +34,8 @@ public class GunManager : MonoBehaviour
         //IF "G" Pressed Swap weapons
         if (Input.GetKeyDown(KeyCode.G))
         {
-            if (WeaponPos >= WeaponSlots)
+            RTimer = 0;
+            if (WeaponPos >= Bullet.Length-1)
             {
                 WeaponPos = 0;
             } else
@@ -44,10 +45,13 @@ public class GunManager : MonoBehaviour
         }
         if (WeaponPos == 0)
         {
-            WeaponUI.text = "Weapon: Lazer";
+            WeaponUI.text = "Weapon: Bullets";
         } else if (WeaponPos == 1)
         {
             WeaponUI.text = "Weapon: Rocket";
+        } else if (WeaponPos == 2)
+        {
+            WeaponUI.text = "Weapon: laser";
         }
     }
 }
