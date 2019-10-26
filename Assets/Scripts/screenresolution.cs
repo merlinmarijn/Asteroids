@@ -7,6 +7,6 @@ public class screenresolution : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Screen.SetResolution(720, 576, true);
+        Screen.SetResolution(720, 576, false);
     }
 }

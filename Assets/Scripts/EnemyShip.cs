@@ -5,14 +5,9 @@ using UnityEngine;
 public class EnemyShip : MonoBehaviour
 {
     public Rigidbody2D ship;
-    public float AccelerationForce;
-    public float RotationForce;
-    public int Health;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected float AccelerationForce= 0.5f;
+    protected float RotationForce= 0.1f;
+    protected int Health=3;
 
     // Update is called once per frame
     void Update()
@@ -24,5 +19,24 @@ public class EnemyShip : MonoBehaviour
         angle *= sign;
         ship.AddTorque(-sign * RotationForce);
         ship.AddForce(transform.up * AccelerationForce);
+    }
+
+    public void TakeDamage(int dmg, GameObject exp)
+    {
+        Health -= dmg;
+        if (Health <= 0)
+        {
+            Instantiate(exp, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.transform.tag == "Player")
+        {
+            col.transform.GetComponent<ShipMovement>().Health -= 1;
+            Destroy(gameObject);
+        }
     }
 }

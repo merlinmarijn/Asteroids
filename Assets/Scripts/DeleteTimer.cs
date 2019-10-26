@@ -14,11 +14,6 @@ public class DeleteTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RTimer -= Time.deltaTime;
-        if (RTimer <= 0)
-        {
-            Destroy(gameObject);
-            RTimer = Timer;
-        }
+        Destroy(gameObject, 1f);
     }
 }

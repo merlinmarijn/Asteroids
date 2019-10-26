@@ -19,7 +19,7 @@ public class CollisionDetector : MonoBehaviour
         {
             if (transform.tag == "Enemy")
             {
-                col.transform.GetComponent<ShipMovement>().Health -= 2;
+                col.transform.GetComponent<ShipMovement>().Health -= 1;
                 Destroy(DestroyBullet);
             } else
             {

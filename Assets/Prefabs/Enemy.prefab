@@ -130,7 +130,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4749964434218207177}
   - component: {fileID: 8079444173482428259}
-  - component: {fileID: 748522747365181219}
   m_Layer: 12
   m_Name: Collider
   m_TagString: Enemy
@@ -178,19 +177,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28, y: 0.21}
   m_EdgeRadius: 0
---- !u!114 &748522747365181219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4699055953978146144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85fa3e5f5362c1349ad8301c1ed40819, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Explosion:
-  - {fileID: 3927095348381395983, guid: c64164b4c9c2fca479bc82cc74145ece, type: 3}
-  - {fileID: 3927095348381395983, guid: a5e05ca6593bed6479a62aecc03c2dc6, type: 3}
-  DestroyBullet: {fileID: 963871395810662171}

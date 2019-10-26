@@ -45,13 +45,13 @@ public class GunManager : MonoBehaviour
         }
         if (WeaponPos == 0)
         {
-            WeaponUI.text = "Weapon: Bullets";
+            WeaponUI.text = "Weapon: Laser";
         } else if (WeaponPos == 1)
         {
             WeaponUI.text = "Weapon: Rocket";
         } else if (WeaponPos == 2)
         {
-            WeaponUI.text = "Weapon: laser";
+            WeaponUI.text = "Weapon: Rapid Fire";
         }
     }
 }

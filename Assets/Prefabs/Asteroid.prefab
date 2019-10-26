@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6235561628407424577}
   - component: {fileID: 4434300131081573456}
   - component: {fileID: 8814457030726306693}
-  - component: {fileID: 7583882264492326492}
   m_Layer: 10
   m_Name: asteroid
   m_TagString: Asteroid
@@ -108,22 +107,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &7583882264492326492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4206214831216116234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85fa3e5f5362c1349ad8301c1ed40819, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Explosion:
-  - {fileID: 3927095348381395983, guid: c64164b4c9c2fca479bc82cc74145ece, type: 3}
-  - {fileID: 3927095348381395983, guid: a5e05ca6593bed6479a62aecc03c2dc6, type: 3}
-  DestroyBullet: {fileID: 6165611075757427345}
 --- !u!1 &6165611075757427345
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +118,6 @@ GameObject:
   - component: {fileID: 7913462605822422894}
   - component: {fileID: 2135213442835749008}
   - component: {fileID: -4665532271155325285}
-  - component: {fileID: 2873884112599977188}
   m_Layer: 10
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -170,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ede84d114572048b9c7929b60e1579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  Speed: 1
+  Explosion: {fileID: 3927095348381395983, guid: c64164b4c9c2fca479bc82cc74145ece,
+    type: 3}
 --- !u!50 &-4665532271155325285
 Rigidbody2D:
   serializedVersion: 4
@@ -193,16 +175,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &2873884112599977188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6165611075757427345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c446fc6ef8ee494e977774595cb0e26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Timer: 15
