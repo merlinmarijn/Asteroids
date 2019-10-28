@@ -7,11 +7,13 @@ public class AsteroidManager : MonoBehaviour
     protected GameObject Target;
     protected float Speed=1;
     protected int Health=3;
+    private ShipMovement Player;
     // Start is called before the first frame update
     void Start()
     {
         Target = GameObject.FindGameObjectWithTag("Player");
         transform.LookAt(Target.transform);
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<ShipMovement>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class AsteroidManager : MonoBehaviour
         Health -= dmg;
         if (Health <= 0)
         {
+            Player.Points(10);
             Instantiate(Exp, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

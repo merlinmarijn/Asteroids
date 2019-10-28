@@ -10,7 +10,9 @@ public class ShipMovement : MonoBehaviour
     public float AccelerationForce = 10f;
     public float RotationForce = 3f;
     public int Health;
+    public int score;
     public Text HealthUI;
+    public Text ScoreUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,16 @@ public class ShipMovement : MonoBehaviour
         ship.AddTorque(rotation * -RotationForce);
         ship.AddForce(transform.up * acceleration * AccelerationForce);
         HealthUI.text = "Health: " + Health;
+        ScoreUI.text = "Score: "+score.ToString();
         if (Health <= 0)
         {
-            SceneManager.LoadScene("Lose");
+            GameObject.FindGameObjectWithTag("SaveNLoad").GetComponent<SaveNLoad>().SaveScore();
+            SceneManager.LoadScene("Game");
         }
+    }
+
+    public void Points(int p)
+    {
+        score += p;
     }
 }
