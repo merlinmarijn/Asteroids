@@ -13,6 +13,7 @@ public class ShipMovement : MonoBehaviour
     public int score;
     public Text HealthUI;
     public Text ScoreUI;
+    public SaveNLoad saver;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +31,8 @@ public class ShipMovement : MonoBehaviour
         ScoreUI.text = "Score: "+score.ToString();
         if (Health <= 0)
         {
-            GameObject.FindGameObjectWithTag("SaveNLoad").GetComponent<SaveNLoad>().SaveScore();
-            SceneManager.LoadScene("Game");
+            saver.SaveScore();
+            SceneManager.LoadScene(0);
         }
     }
 

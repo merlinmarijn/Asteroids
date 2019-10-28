@@ -42,10 +42,6 @@ public class SaveNLoad : MonoBehaviour
         Player = "tttttttttt";
         Score = GameObject.FindGameObjectWithTag("Player").GetComponent<ShipMovement>().score;
         TimePlayed += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SaveScore();
-        }
     }
 
     public void SaveScore()
